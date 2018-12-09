@@ -45,7 +45,7 @@
         console.log(this.choseArr);
       },
       goNext(){
-        this.$router.push('/branch');
+        this.$router.push('/branchTime');
       }
     },
     created(){},
@@ -53,6 +53,9 @@
 </script>
 
 <style scoped>
+  .container{
+    margin:auto .1rem;
+  }
   .top-head{
     font-size:.32rem;
     color:#333333;

@@ -27,10 +27,31 @@ export default new Router({
       }
     },
     {
-      path: '/branch',
+      path: '/branchTime',
+      name: 'choseBranchTime',
+      component: function(resolve){
+        require(['../components/choseBranchTime.vue'],resolve)
+      }
+    },
+    {
+      path: '/selectBranch',
       name: 'selectBranch',
       component: function(resolve){
         require(['../components/selectBranch.vue'],resolve)
+      }
+    },
+    {
+      path: '/myApp',
+      name: 'myAppointment',
+      component: function(resolve){
+        require(['../components/myAppointment.vue'],resolve)
+      }
+    },
+    {
+      path: '/appDetails',
+      name: 'appointmentDetails',
+      component: function(resolve){
+        require(['../components/appointmentDetails.vue'],resolve)
       }
     },
   ]

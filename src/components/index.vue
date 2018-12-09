@@ -46,6 +46,9 @@
 </script>
 
 <style scoped>
+  .container{
+    margin:auto .1rem;
+  }
   .s-input {
     margin-top: .5rem;
   }

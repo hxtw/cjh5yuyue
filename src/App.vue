@@ -27,9 +27,6 @@ export default {
 html {
    font-size: calc(100vw / 7.5);
  }
-.container{
-  margin:auto .1rem;
-}
 li{
   list-style: none;
 }
@@ -70,7 +67,7 @@ li{
   border: none;
   color: #ffffff;
   position: fixed;
-  bottom: .5rem;
+  bottom: .3rem;
   outline: none;
 }
 </style>

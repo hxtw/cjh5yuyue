@@ -148,6 +148,9 @@
 </script>
 
 <style scoped>
+  .container{
+    margin:auto .1rem;
+  }
   section p{
     font-size:.3rem;
     color:#333333;
