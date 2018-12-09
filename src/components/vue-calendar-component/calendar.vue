@@ -1,10 +1,10 @@
 <style scoped>
-@media screen and (min-width: 460px) {
+/*@media screen and (min-width: 460px) {*/
   .wh_item_date:hover {
     background: #71c7a5;
     cursor: pointer;
   }
-}
+/*}*/
 * {
   margin: 0;
   padding: 0;
@@ -25,7 +25,7 @@ li {
 .wh_top_changge li {
   cursor: pointer;
   display: flex;
-  color: #fff;
+  color: #0d0d0d;
   font-size: 18px;
   flex: 1;
   justify-content: center;
@@ -94,8 +94,8 @@ wh_content_item_tag {
 .wh_jiantou1 {
   width: 12px;
   height: 12px;
-  border-top: 2px solid #ffffff;
-  border-left: 2px solid #ffffff;
+  border-top: 2px solid #4C75AC;
+  border-left: 2px solid #4C75AC;/*ac*/
   transform: rotate(-45deg);
 }
 
@@ -107,8 +107,8 @@ wh_content_item_tag {
 .wh_jiantou2 {
   width: 12px;
   height: 12px;
-  border-top: 2px solid #ffffff;
-  border-right: 2px solid #ffffff;
+  border-top: 2px solid #4C75AC;
+  border-right: 2px solid #4C75AC;
   transform: rotate(45deg);
 }
 .wh_content_item > .wh_isMark {
@@ -183,7 +183,7 @@ export default {
     },
     textTop: {
       type: Array,
-      default: () => ['日', '一', '二', '三', '四', '五', '六']
+      default: () => [ '一', '二', '三', '四', '五', '六','日']
     },
     sundayStart: {
       type: Boolean,

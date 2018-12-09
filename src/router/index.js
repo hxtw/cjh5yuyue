@@ -7,16 +7,30 @@ export default new Router({
   routes: [
     {
       path: '/',
-      name: 'HelloWorld',
+      name: 'index',
       component: function(resolve){
-        require(['../components/HelloWorld.vue'],resolve)
+        require(['../components/index.vue'],resolve)
       }
     },
     {
-      path: '/test',
-      name: 'test',
+      path: '/information',
+      name: 'information',
       component: function(resolve){
-        require(['../components/test.vue'],resolve)
+        require(['../components/healthInformation.vue'],resolve)
+      }
+    },
+    {
+      path: '/setMeal',
+      name: 'setMeal',
+      component: function(resolve){
+        require(['../components/setMeal.vue'],resolve)
+      }
+    },
+    {
+      path: '/branch',
+      name: 'selectBranch',
+      component: function(resolve){
+        require(['../components/selectBranch.vue'],resolve)
       }
     },
   ]

@@ -1,5 +1,5 @@
 <template>
-  <div class="content">
+  <div class="container">
     <!-- agoDayHide='1517483961' -->
     <!-- futureDayHide="1526054400" -->
     <div class="date">日历</div>
