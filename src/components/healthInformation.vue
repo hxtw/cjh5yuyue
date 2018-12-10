@@ -8,7 +8,7 @@
           <img class="icon_right" src="../../static/image/icon_right.png"/>
         </li>
         <li>
-          <p>出生日期：</p><input type="text" @click="toShow(2)" :value="formData.birthData" readonly placeholder="请选择日期" />
+          <p>出生日期：</p><input type="text" @click="setDate" :value="formData.birthData" readonly placeholder="请选择日期" />
           <img class="icon_right" src="../../static/image/icon_right.png"/>
         </li>
         <li>
@@ -45,8 +45,8 @@
         show: false,
         columns: 1,
         defaultData:[{
-          text:14,
-          value:14
+          text:'',
+          value:''
         }],
         pickData:{},
         formData:{
@@ -56,15 +56,84 @@
           marriage:'',
           race:'',
         },
-        typeIs:0
+        typeIs:0,
+        institutionData: {
+          data1: [
+            {
+              text: '北京四方自动化有限公司',
+              value: '1-1'
+            },
+            {
+              text: '1北京四方自动化有限公司',
+              value: '1-2'
+            },
+            {
+              text: '2北京四方自动化有限公司',
+              value: '1-3'
+            },
+            {
+              text: '3北京四方自动化有限公司',
+              value: '1-4'
+            },
+          ]
+        },
+        sexData: {
+          data1: [
+            {
+              text: '男',
+              value: '1'
+            },
+            {
+              text: '女',
+              value: '2'
+            }
+          ]
+        },
+        marriageData: {
+          data1: [
+            {
+              text: '未婚',
+              value: '1'
+            },
+            {
+              text: '已婚',
+              value: '2'
+            }
+          ]
+        },
+        raceData: {
+          data1: [
+            {
+              text: '黄种人',
+              value: '1'
+            },
+            {
+              text: '白种人',
+              value: '2'
+            },
+            {
+              text: '黑种人',
+              value: '3'
+            }
+          ]
+        },
       }
     },
     components:{
-      vuePickers
+      vuePickers,
     },
     methods:{
       close() {
         this.show = false
+      },
+      setDate(){
+        this.$picker.show({
+          type:'datePicker',
+          onOk: (date) =>{
+            this.formData.birthData = date
+          }
+        });
+
       },
       confirmFn(val) {
         let that = this;
@@ -88,56 +157,74 @@
             break;
           default:
         }
+        console.log(val.select1)
         that.defaultData = [val.select1];
-        console.log(that.defaultData)
+        that.defaultData = [];
       },
       toShow(type) {
         let that = this;
         this.show = true;
         that.typeIs = type;
-        if(type == 1) {
-          that.pickData = {
-            data1: [
-              {
-                text: '测试1',
-                value: '1-1'
-              },
-              {
-                text: '测试2',
-                value: '1-2'
-              },
-              {
-                text: '测试3',
-                value: '1-3'
-              },
-              {
-                text: '测试4',
-                value: '1-4'
-              },
-            ]
-          }
-        }else{
-          that.pickData={
-            data1: [
-              {
-                text:14,
-                value:14
-              },
-              {
-                text:18,
-                value:18
-              },
-              {
-                text:22,
-                value:22
-              },
-              {
-                text:30,
-                value:30
-              },
-            ]
-          }
+        switch (type){
+          case 1:
+            that.pickData = that.institutionData;
+            break;
+          case 3:
+            that.pickData = that.sexData;
+            break;
+          case 4:
+            that.pickData = that.marriageData;
+            break;
+          case 5:
+            that.pickData = that.raceData;
+            break;
+          default:
         }
+        // if(type == 1) {
+        //   that.pickData = {
+        //     data1: [
+        //       {
+        //         text: '测试1',
+        //         value: '1-1'
+        //       },
+        //       {
+        //         text: '测试2',
+        //         value: '1-2'
+        //       },
+        //       {
+        //         text: '测试3',
+        //         value: '1-3'
+        //       },
+        //       {
+        //         text: '测试4',
+        //         value: '1-4'
+        //       },
+        //     ]
+        //   }
+          console.log(that.pickData);
+        //   }
+        // }else{
+        //   that.pickData={
+        //     data1: [
+        //       {
+        //         text:14,
+        //         value:14
+        //       },
+        //       {
+        //         text:18,
+        //         value:18
+        //       },
+        //       {
+        //         text:22,
+        //         value:22
+        //       },
+        //       {
+        //         text:30,
+        //         value:30
+        //       },
+        //     ]
+        //   }
+        // }
       },
       goNext(){
         this.$router.push('/setMeal');
@@ -149,7 +236,7 @@
 
 <style scoped>
   .container{
-    margin:auto .1rem;
+    margin:auto .2rem;
   }
   section p{
     font-size:.3rem;

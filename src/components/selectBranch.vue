@@ -1,30 +1,33 @@
 <template>
   <div class="container">
     <section class="content">
-      <li>
-        <div class="checkbox"><input type="radio" @click="choseMeal($event)"/></div>
-        <div class="chose-address">
-          <p>北京潘家园分院<label>北京市朝阳区潘家园9号濠景阁大厦1-2层（肿瘤医院北200米路口）</label></p>
-        </div>
-      </li>
-      <li>
-        <div class="checkbox"><input type="radio" @click="choseMeal(2)"/></div>
-        <div class="chose-address">
-          <p>北京亚运村分院<label>北京市朝阳区北土城西路7号（国恒基业大厦二层)</label></p>
-        </div>
-      </li>
-      <li>
-        <div class="checkbox"><input type="radio" @click="choseMeal(3)"/></div>
-        <div class="chose-address">
-          <p>北京西直门分院<label>北京市西城区西直门外大街1号西环广场T1写字楼（南座）15层</label></p>
-        </div>
-      </li>
-      <li>
-        <div class="checkbox"><input type="radio" @click="choseMeal(3)"/></div>
-        <div class="chose-address">
-          <p>北京西直门分院<label>北京市西城区西直门外大街1号西环广场T1写字楼（南座）15层</label></p>
-        </div>
-      </li>
+      <div class="msg-box">
+        <label class="radio-box">
+          <input type="radio" @click="choseMeal(1)" name="group">
+          <span class="radio-style">
+            <p>北京潘家园分院</p>
+            <p>北京市朝阳区潘家园9号濠景阁大厦1-2层（肿瘤医院北200米路口）</p>
+        </span>
+        </label>
+      </div>
+      <div class="msg-box">
+        <label class="radio-box">
+          <input type="radio" @click="choseMeal(2)" name="group">
+          <span class="radio-style">
+            <p>北京亚运村分院</p>
+            <p>北京市朝阳区北土城西路7号（国恒基业大厦二层)</p>
+        </span>
+        </label>
+      </div>
+      <div class="msg-box">
+        <label class="radio-box">
+          <input type="radio" @click="choseMeal(3)" name="group">
+          <span class="radio-style">
+            <p>北京西直门分院</p>
+            <p>北京市西城区西直门外大街1号西环广场T1写字楼（南座）15层</p>
+        </span>
+        </label>
+      </div>
     </section>
     <button class="sub_button" @click="goNext()">下一步</button>
   </div>
@@ -40,20 +43,8 @@
     },
     components: {},
     methods: {
-      choseMeal(event) {
-        $(event.currentTarget).addClass('checked')
-        console.log(event.currentTarget);
-        // switch (val){
-        //   case 1:
-        //     console.log(this);
-        //     break;
-        //   default:
-        // }
-        // if(val == 1){
-        //   this.isChecked = !this.isChecked;
-        // }
-        // this.choseArr.push(val);
-        // console.log(this.choseArr);
+      choseMeal(id) {
+        console.log(id)
       },
       goNext() {
         this.$router.push('/branchTime');
@@ -65,64 +56,61 @@
 </script>
 
 <style scoped>
-  .container{
-    margin:auto .1rem;
-  }
-  .content {
-    font-size: .3rem;
-    color: #333333;
+  .container {
     margin: auto .2rem;
   }
 
-  .content li {
-    padding-bottom:.4rem;
-    border-bottom: .01rem solid #f3f3f3;
-    display: flex;
-    flex: 1;
-  }
-  .content li .checkbox{
-    margin-top:.4rem;
-  }
-  .content li .chose-address{
-    margin-top:.4rem;
-  }
-  .content li .chose-address p{
-    font-size:.3rem;
-    color:#333333;
-  }
-  .content li .chose-address label{
-    font-size:.28rem;
-    color:#666666;
-    display: block;
-    margin-top:.1rem;
-  }
-  .content li input[type=radio] {
-    width: .34rem;
-    height: .34rem;
-    border: .01rem solid #c9c9c9;
-    border-radius: .5rem;
-    -webkit-appearance: none;
-    outline: none;
-    margin-right: .2rem;
+  .content {
+    font-size: .3rem;
+    color: #333333;
   }
 
-  .checked{
+  .msg-box {
+    padding: 0 .4rem .4rem .4rem;
+    border-bottom: .01rem solid #f3f3f3;
+  }
+
+  .msg-box label {
+    display: flex;
+  }
+
+  .content .radio-box .radio-style p:first-child {
+    font-size: .3rem;
+    color: #333333;
+  }
+
+  .content .radio-box .radio-style p {
+    font-size: .28rem;
+    color: #666666;
+    margin-left: .2rem;
+  }
+
+  .radio-style {
+    position: relative;
+  }
+
+  .radio-box input[type="radio"] {
+    opacity: 0;
+    width: 0;
+    height: 0;
+  }
+
+  .radio-style::before {
+    display: inline-block;
+    width: .34rem;
+    height: .34rem;
+    border-radius: 50%;
+    border: .01rem solid #c9c9c9;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    content: "";
+    position: relative;
+    top: .45rem;
+    right: .25rem;
+  }
+
+  input[type="radio"]:checked + .radio-style::before {
     background: url("../../static/image/checked.png") no-repeat;
     background-size: .34rem .34rem;
   }
-
-  /*.content li input[type=radio]{*/
-  /*width:.34rem;*/
-  /*height:.34rem;*/
-  /*border:.01rem solid #c9c9c9;*/
-  /*border-radius: .5rem;*/
-  /*-webkit-appearance: none;*/
-  /*outline: none;*/
-  /*margin-right:.1rem;*/
-  /*vertical-align: middle;*/
-  /*}*/
-  /*.content input[type=radio]:checked{*/
-  /*background:url("../../static/image/checked.png") no-repeat;*/
-  /*background-size:.34rem .34rem;*/
-  /*}*/
 </style>

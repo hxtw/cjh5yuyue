@@ -15,7 +15,8 @@
     "vue-calendar-component": "^2.7.4",
     "vue-pickers": "^1.1.5",
     "vue-router": "^3.0.1",
-    "vue-toast-component": "^2.0.0"
+    "vue-toast-component": "^2.0.0",
+    "vue2-datepick": "^3.0.10"
   },
   "devDependencies": {
     "autoprefixer": "^7.1.2",

@@ -21,13 +21,14 @@
                   v-on:choseDay="clickDay" v-on:changeMonth="changeDate"></Calendar>
       </div>
     </section>
-    <button class="sub_button" @click="goNext()">下一步</button>
+    <button class="sub_button" @click="goNext(1)">提交</button>
     <div class="alert" v-if="showAlert">
       <div class="cont">
         <div class="success"><img src="../../static/image/duigou.png"/><p>您已成功预约体检</p></div>
-        <button class="suc_button" @click="goNext()">查看我的预约</button>
-        <button class="suc_button" @click="goNext()">返回预约体检首页</button>
-        <button class="suc_button" @click="goNext()">其它...</button>
+        <div class="close_icon" @click="goNext(5)"><img src="../../static/image/in_close.png"/></div>
+        <button class="suc_button" @click="goNext(2)">查看我的预约</button>
+        <button class="suc_button" @click="goNext(3)">返回预约体检首页</button>
+        <button class="suc_button" @click="goNext(4)">其它...</button>
       </div>
     </div>
   </div>
@@ -76,8 +77,26 @@
       choseBranch(){
         this.$router.push('/selectBranch')
       },
-      goNext(){
-        this.$router.push('/branch');
+      goNext(val){
+        let that = this;
+        switch (val){
+          case 1:
+            that.showAlert = true;
+            break;
+          case 2:
+            that.$router.push('/myApp');
+            break;
+          case 3:
+            that.$router.push('/');
+            break;
+          case 4:
+            console.log('其它');
+            break;
+          case 5:
+            that.showAlert = false;
+            break;
+          default:
+        }
       }
     },
     created(){
@@ -124,8 +143,8 @@
   }
   .line{
     border-bottom:.3rem solid #f4f7f9;
-    margin-left:-.2rem;
-    margin-right:-.2rem;
+    margin-left:-.1rem;
+    margin-right:-.1rem;
   }
   .top-head li:last-child{
     flex: 1;
@@ -218,6 +237,13 @@
     left:50%;
     transform: translate(-50%,-50%);
   }
+  .close_icon img{
+    width:.2rem;
+    height:.2rem;
+    position:absolute;
+    top:4%;
+    right:5%;
+  }
   .cont .success img{
     width:.98rem;
     height:.98rem;
@@ -235,5 +261,6 @@
     border-radius: 5rem;
     border: none;
     color: #ffffff;
+    font-size:.3rem;
   }
 </style>

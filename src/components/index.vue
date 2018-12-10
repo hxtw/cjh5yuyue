@@ -39,6 +39,11 @@
         }
       },
       goNext(){
+        let that = this;that.formData
+        axios.post('/user', {})
+          .then(function (response) {
+            console.log(response);
+          })
         this.$router.push('/information')
       }
     }

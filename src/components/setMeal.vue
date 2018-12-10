@@ -8,20 +8,22 @@
       <div class="content">
         <div class="c-head">选择套餐</div>
         <li>
-          <input type="checkbox" @click="choseMeal(1)"/><label>职场精英套餐（男）</label>
+          <label class="radio-box">
+            <input type="radio" @click="choseMeal(1)" name="group">
+            <span class="radio-style">职场精英套餐（男）</span>
+          </label>
         </li>
         <li>
-          <input type="checkbox" @click="choseMeal(2)"/><label>职场精英套餐（男）</label>
+          <label class="radio-box">
+            <input type="radio" @click="choseMeal(2)" name="group">
+            <span class="radio-style">职场精英套餐（男）</span>
+          </label>
         </li>
         <li>
-          <input type="checkbox" @click="choseMeal(3)"/><label>职场精英套餐（男）</label>
-        </li>
-        <li>
-          <input type="checkbox" @click="choseMeal(4)"/><label>职场精英套餐（男）</label>
-        </li>
-        <li>
-          <input type="checkbox" @click="choseMeal(5)"/><label>职场精英套餐（男）</label>
-          <!--<input type="radio" @click="choseMeal(5)"/><label>职场精英套餐（男）</label>-->
+          <label class="radio-box">
+            <input type="radio" @click="choseMeal(2)" name="group">
+            <span class="radio-style">职场精英套餐（男）</span>
+          </label>
         </li>
       </div>
     </section>
@@ -41,7 +43,7 @@
     },
     methods:{
       choseMeal(val){
-        this.choseArr.push(val);
+        // this.choseArr.push(val);
         console.log(this.choseArr);
       },
       goNext(){
@@ -54,7 +56,8 @@
 
 <style scoped>
   .container{
-    margin:auto .1rem;
+    /*background-color:#F4F7F9;*/
+    padding:.1rem .2rem .2rem .2rem;
   }
   .top-head{
     font-size:.32rem;
@@ -64,10 +67,13 @@
     padding-left:.2rem;
     display: flex;
   }
+  .top-head li:first-child{
+    font-weight: bold;
+  }
   .line{
     border-bottom:.3rem solid #f4f7f9;
-    margin-left:-.2rem;
-    margin-right:-.2rem;
+    margin-left:-.195rem;
+    margin-right:-.195rem;
   }
   .top-head li:last-child{
     flex: 1;
@@ -83,42 +89,41 @@
     height:1.2rem;
     line-height:1.2rem;
     border-bottom:0.01rem solid #f3f3f3;
+    font-size:.3rem;
+    color:#333333;
+    font-weight: bold;
   }
   .content li{
     height:1.1rem;
     line-height:1.1rem;
     border-bottom:.01rem solid #f3f3f3;
+    /*display: flex;*/
+    /*flex: 1;*/
   }
   .content li label{
     margin-left:.2rem;
     vertical-align: middle;
   }
-  .content li input[type=checkbox]{
-    width:.34rem;
-    height:.34rem;
-    border:.01rem solid #c9c9c9;
-    border-radius: .5rem;
-    -webkit-appearance: none;
-    outline: none;
-    margin-right:.1rem;
-    vertical-align: middle;
+  .content input[type="radio"] {
+    opacity: 0;
+    width: 0;
+    height: 0;
   }
-  .content input[type=checkbox]:checked{
+  .radio-style::before {
+    display: inline-block;
+    width: .34rem;
+    height: .34rem;
+    border-radius: 50%;
+    border: .01rem solid #c9c9c9;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    content: "";
+    position: relative;
+    top: .07rem;
+    right: .25rem;
+  }
+  .content input[type="radio"]:checked + .radio-style::before{
     background:url("../../static/image/checked.png") no-repeat;
     background-size:.34rem .34rem;
   }
-  /*.content li input[type=radio]{*/
-    /*width:.34rem;*/
-    /*height:.34rem;*/
-    /*border:.01rem solid #c9c9c9;*/
-    /*border-radius: .5rem;*/
-    /*-webkit-appearance: none;*/
-    /*outline: none;*/
-    /*margin-right:.1rem;*/
-    /*vertical-align: middle;*/
-  /*}*/
-  /*.content input[type=radio]:checked{*/
-    /*background:url("../../static/image/checked.png") no-repeat;*/
-    /*background-size:.34rem .34rem;*/
-  /*}*/
 </style>

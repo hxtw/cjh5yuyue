@@ -1,10 +1,10 @@
 <template>
   <div id="app">
     <!--<img src="./assets/logo.png">-->
-    <div class="header">
-      <div class="left"><p class="top_change"></p></div>
-      <p>头看看是否就是部</p>
-    </div>
+    <!--<div class="header">-->
+      <!--<div class="left"><p class="top_change"></p></div>-->
+      <!--<p>预约体检</p>-->
+    <!--</div>-->
     <router-view/>
   </div>
 </template>
@@ -69,5 +69,7 @@ li{
   position: fixed;
   bottom: .3rem;
   outline: none;
+  font-size:.36rem;
+  margin-left:.1rem;
 }
 </style>
