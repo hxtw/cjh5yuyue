@@ -22,28 +22,28 @@
         <p class="edit" @click="changeAppoint('',2)">修改预约</p>
       </div>
     </div>
-    <!--<div class="information">-->
-      <!--<div>受检人：沈鸿<i>已预约</i></div>-->
-      <!--<div>预约时间：2018-12-20</div>-->
-      <!--<div class="in-branch">预约分院：北京潘家园分院-->
-        <!--<p class="icon_right"><img  src="../../static/image/icon_right.png"/></p></div>-->
-      <!--<div>体检项目：慈铭体检套餐</div>-->
-      <!--<div class="in-button">-->
-        <!--<p class="ss" @click="changeAppoint('',1)">取消预约</p>-->
-        <!--<p class="edit" @click="changeAppoint('',2)">修改预约</p>-->
-      <!--</div>-->
-    <!--</div>-->
-    <!--<div class="information">-->
-      <!--<div>受检人：沈鸿<i>已预约</i></div>-->
-      <!--<div>预约时间：2018-12-20</div>-->
-      <!--<div class="in-branch">预约分院：北京潘家园分院-->
-        <!--<p class="icon_right"><img  src="../../static/image/icon_right.png"/></p></div>-->
-      <!--<div>体检项目：慈铭体检套餐</div>-->
-      <!--<div class="in-button">-->
-        <!--<p class="ss" @click="changeAppoint('',1)">取消预约</p>-->
-        <!--<p class="edit" @click="changeAppoint('',2)">修改预约</p>-->
-      <!--</div>-->
-    <!--</div>  -->
+    <div class="information">
+      <div>受检人：沈鸿<i>已预约</i></div>
+      <div>预约时间：2018-12-20</div>
+      <div class="in-branch">预约分院：北京潘家园分院
+        <p class="icon_right"><img  src="../../static/image/icon_right.png"/></p></div>
+      <div>体检项目：慈铭体检套餐</div>
+      <div class="in-button">
+        <p class="ss" @click="changeAppoint('',1)">取消预约</p>
+        <p class="edit" @click="changeAppoint('',2)">修改预约</p>
+      </div>
+    </div>
+    <div class="information">
+      <div>受检人：沈鸿<i>已预约</i></div>
+      <div>预约时间：2018-12-20</div>
+      <div class="in-branch">预约分院：北京潘家园分院
+        <p class="icon_right"><img  src="../../static/image/icon_right.png"/></p></div>
+      <div>体检项目：慈铭体检套餐</div>
+      <div class="in-button">
+        <p class="ss" @click="changeAppoint('',1)">取消预约</p>
+        <p class="edit" @click="changeAppoint('',2)">修改预约</p>
+      </div>
+    </div>
   </div>
 </template>
 
@@ -93,6 +93,10 @@
         },
       },
       created(){},
+      mounted() {
+        window.document.getElementsByTagName("html")[0].style.backgroundColor = '#F4F7F9';
+        window.document.body.style.backgroundColor = '#F4F7F9';
+      }
     }
 </script>
 
