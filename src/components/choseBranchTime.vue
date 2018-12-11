@@ -48,11 +48,11 @@
             className: 'mark1'
           },
           {
-            date: '2018/12/21',
+            date: '2018/12/25',
             className: 'mark1'
           },
           {
-            date: '2019/1/21',
+            date: '2019/1/26',
             className: 'mark1'
           },
           {
@@ -194,12 +194,12 @@
   }
 
   .wh_container >>> .mark1 {
-    background:url("../../static/image/full.png") no-repeat .48rem 0rem;
+    background:url("../../static/image/full.png") no-repeat .46rem 0rem;
     background-size:.32rem .32rem;
   }
 
   .wh_container >>> .mark2 {
-    background:url("../../static/image/rest.png") no-repeat .48rem 0rem;
+    background:url("../../static/image/rest.png") no-repeat .46rem 0rem;
     background-size:.32rem .32rem;
   }
   .wh_content_item > .wh_isMark {
