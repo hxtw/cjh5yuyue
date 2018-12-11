@@ -70,8 +70,8 @@
     },
     created(){},
     mounted() {
-      window.document.getElementsByTagName("html")[0].style.backgroundColor = '#F4F7F9';
-      window.document.body.style.backgroundColor = '#F4F7F9';
+      // window.document.getElementsByTagName("html")[0].style.backgroundColor = '#F4F7F9';
+      // window.document.body.style.backgroundColor = '#F4F7F9';
     }
   }
 </script>

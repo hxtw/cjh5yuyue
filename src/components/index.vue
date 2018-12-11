@@ -17,6 +17,7 @@
 </template>
 
 <script>
+  import units from '../tool/units'
   export default {
     name: "index",
     data() {
@@ -40,11 +41,8 @@
       },
       goNext(){
         let that = this;
-        this.$axios.post('',this.qs.stringify({'name':'xiaoming','sex':'nan'}),{
-          headers: {
-            'Content-Type': 'application/x-www-form-urlencoded'
-          }
-        }).then(function(res){
+        this.$axios.get(units.host('getPersonBySglcheckIdName?checkUserName=张焱&sglcheckId=000101018121171903&userId=23368855'))
+        .then(function(res){
             console.log(res.data)
             //控制台打印请求成功时返回的数据
             //bind(this)可以不用
