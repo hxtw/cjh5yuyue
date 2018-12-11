@@ -17,14 +17,13 @@
       <div class="chose-date">
         <div class="date-head">选择日期</div>
         <Calendar ref="Calendar" :sundayStart="false" :markDateMore="arr"
-                  :markDate="arr2" v-on:isToday="clickToday" agoDayHide="test"
-                  v-on:choseDay="clickDay" v-on:changeMonth="changeDate"></Calendar>
+                  :markDate="arr2" v-on:choseDay="clickDay" v-on:changeMonth="changeDate"></Calendar>
       </div>
     </section>
     <button class="sub_button" @click="goNext(1)">提交</button>
     <div class="alert" v-if="showAlert">
       <div class="cont">
-        <div class="success"><img src="../../static/image/duigou.png"/><p>您已成功预约体检</p></div>
+        <div class="success"><img src="../../static/image/icon_suc.png"/><p>您已成功预约体检</p></div>
         <div class="close_icon" @click="goNext(5)"><img src="../../static/image/in_close.png"/></div>
         <button class="suc_button" @click="goNext(2)">查看我的预约</button>
         <button class="suc_button" @click="goNext(3)">返回预约体检首页</button>
@@ -41,17 +40,33 @@
     data(){
       return{
         choseArr:[],
-        // arr2: ['2018/6/23'],
+        timestamp:"",
         arr2: [],
         arr: [
           {
-            date: '2018/8/1',
+            date: '2018/12/20',
             className: 'mark1'
           },
           {
-            date: '2018/8/13',
+            date: '2018/12/21',
+            className: 'mark1'
+          },
+          {
+            date: '2019/1/21',
+            className: 'mark1'
+          },
+          {
+            date: '2019/1/1',
             className: 'mark2'
-          }
+          },
+          {
+            date: '2018/12/1',
+            className: 'mark2'
+          },
+          {
+            date: '2018/12/2',
+            className: 'mark2'
+          },
         ],
         showAlert:false,
       }
@@ -62,17 +77,9 @@
     methods:{
       clickDay(data) {
         console.log('选中了', data); //选中某天
-        this.$toast('选中了' + data);
-      },
-      clickToday(data) {
-        console.log('跳到了本月今天', data); //跳到了本月
       },
       changeDate(data) {
-        this.$toast('切换到的月份为' + data);
-        console.log('左右点击切换月份', data); //左右点击切换月份
-      },
-      demo() {
-        this.$refs.Calendar.ChoseMonth('2018-12-13'); //跳到12月12日选中12月12日
+        // this.$toast('切换到的月份为' + data);
       },
       choseBranch(){
         this.$router.push('/selectBranch')
@@ -100,28 +107,10 @@
       }
     },
     created(){
-      let that = this;
-      function format(date, index) {
-        date = new Date(date);
-        that.test = Date.parse(date);
-        return `${date.getFullYear()}-${date.getMonth() + 1}-${index}`;
-      }
-      setTimeout(() => {
-        this.arr = [
-          {
-            date: format(new Date(), 3),
-            className: 'mark1'
-          },
-          {
-            date: format(new Date(), 12),
-            className: 'mark2'
-          }
-        ];
-        this.arr.push({
-          date: format(new Date(), 15),
-          className: 'mark1'
-        })
-      }, 1000)
+    },
+    mounted(){
+      // this.$ref.Calendar.agoDayHide = new Date().getTime();
+      this.timestamp=new Date().getTime();
     },
   }
 </script>
@@ -205,11 +194,13 @@
   }
 
   .wh_container >>> .mark1 {
-    background-color: orange;
+    background:url("../../static/image/full.png") no-repeat .48rem 0rem;
+    background-size:.32rem .32rem;
   }
 
   .wh_container >>> .mark2 {
-    background-color: blue;
+    background:url("../../static/image/rest.png") no-repeat .48rem 0rem;
+    background-size:.32rem .32rem;
   }
   .wh_content_item > .wh_isMark {
     background: orange;
@@ -245,8 +236,8 @@
     right:5%;
   }
   .cont .success img{
-    width:.98rem;
-    height:.98rem;
+    width:1.02rem;
+    height:1.02rem;
     margin-top:.5rem;
   }
   .cont .success p{

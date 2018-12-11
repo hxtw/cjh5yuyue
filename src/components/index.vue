@@ -39,12 +39,17 @@
         }
       },
       goNext(){
-        let that = this;that.formData
-        axios.post('/user', {})
-          .then(function (response) {
-            console.log(response);
-          })
-        this.$router.push('/information')
+        let that = this;
+        this.$axios.post('',this.qs.stringify({'name':'xiaoming','sex':'nan'}),{
+          headers: {
+            'Content-Type': 'application/x-www-form-urlencoded'
+          }
+        }).then(function(res){
+            console.log(res.data)
+            //控制台打印请求成功时返回的数据
+            //bind(this)可以不用
+          });
+        this.$router.push('/information');
       }
     }
   }
