@@ -38,6 +38,7 @@
 
 <script>
   import vuePickers from 'vue-pickers';
+  import units from '../tool/units'
   export default {
     name: "healthInformation",
     data(){
@@ -123,6 +124,16 @@
       vuePickers,
     },
     methods:{
+      getList(){
+        let that = this;
+        this.$axios.get(units.host('getPersonBySglcheckIdName?checkUserName=张焱&sglcheckId=000101018121171903&userId=23368855'))
+          .then(function(res){ console.log(1)
+            if(res.data.jjk_resultCode == "0"){
+
+            }else{
+            }
+          });
+      },
       close() {
         this.show = false
       },
@@ -180,60 +191,15 @@
             break;
           default:
         }
-        // if(type == 1) {
-        //   that.pickData = {
-        //     data1: [
-        //       {
-        //         text: '测试1',
-        //         value: '1-1'
-        //       },
-        //       {
-        //         text: '测试2',
-        //         value: '1-2'
-        //       },
-        //       {
-        //         text: '测试3',
-        //         value: '1-3'
-        //       },
-        //       {
-        //         text: '测试4',
-        //         value: '1-4'
-        //       },
-        //     ]
-        //   }
-          console.log(that.pickData);
-        //   }
-        // }else{
-        //   that.pickData={
-        //     data1: [
-        //       {
-        //         text:14,
-        //         value:14
-        //       },
-        //       {
-        //         text:18,
-        //         value:18
-        //       },
-        //       {
-        //         text:22,
-        //         value:22
-        //       },
-        //       {
-        //         text:30,
-        //         value:30
-        //       },
-        //     ]
-        //   }
-        // }
       },
       goNext(){
         this.$router.push('/setMeal');
       }
     },
-    created(){},
+    created(){
+      // this.getList();
+    },
     mounted(){
-      window.document.getElementsByTagName("html")[0].style.backgroundColor = '#F4F7F9';
-      window.document.body.style.backgroundColor = '#F4F7F9';
     },
   }
 </script>
@@ -280,5 +246,6 @@
     width:100%;
     margin-right:.4rem;
     font-size:.32rem;
+    background:transparent;
   }
 </style>

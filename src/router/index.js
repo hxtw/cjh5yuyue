@@ -13,6 +13,13 @@ export default new Router({
       }
     },
     {
+      path: '/login',
+      name: 'login',
+      component: function(resolve){
+        require(['../components/login.vue'],resolve)
+      }
+    },
+    {
       path: '/information',
       name: 'information',
       component: function(resolve){

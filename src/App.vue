@@ -24,6 +24,10 @@ export default {
   /*color: #2c3e50;*/
   /*margin-top: 60px;*/
 }
+*{
+  margin:0;
+  padding:0;
+}
 html {
    font-size: calc(100vw / 7.5);
  }

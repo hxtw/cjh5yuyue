@@ -34,6 +34,7 @@
 </template>
 
 <script>
+  import units from '../tool/units'
   export default {
     name: "setMeal",
     data() {
@@ -43,6 +44,22 @@
     },
     components: {},
     methods: {
+      getList(){
+        let that = this;
+        this.$axios.post(units.host('writeGroup'),
+          this.qs.stringify({
+            "sglcheckId":"R\\/GzmryKAg0nc52cxFJ4T0iN4iY\\/J+pkpFOAM1aNZHw=",
+            'checkCityId':'110100',
+            'groupCode':'1803088774',
+            'personCode':'1803088774',
+          }),{
+          headers: {
+            'Content-Type': 'application/x-www-form-urlencoded'
+          }
+        }).then(function(res){
+          console.log(res.data);
+        });
+      },
       choseMeal(id) {
         console.log(id)
       },
@@ -51,6 +68,7 @@
       }
     },
     created() {
+      this.getList();
     },
   }
 </script>
