@@ -138,13 +138,17 @@
         this.show = false
       },
       setDate(){
-        this.$picker.show({
-          type:'datePicker',
-          onOk: (date) =>{
-            this.formData.birthData = date
-          }
-        });
-
+        if(!this.show) {
+          var date = new Date();
+          date = `${date.getFullYear()}-${date.getMonth()+1}-${date.getDate()}`;
+          this.$picker.show({
+            type: 'datePicker',
+            endTime: date,
+            onOk: (date) => {
+              this.formData.birthData = date
+            }
+          });
+        }
       },
       confirmFn(val) {
         let that = this;
