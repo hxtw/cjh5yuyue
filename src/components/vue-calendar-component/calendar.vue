@@ -201,7 +201,8 @@
         default: () => false
       },
       agoDayHide: {type: String, default: `0`},
-      futureDayHide: {type: String, default: `2554387200`}
+      futureDayHide: {type: String, default: `2554387200`},
+      endMonth:{type:String}
     },
     created() {
       this.intStart();
@@ -224,7 +225,13 @@
         $.each(markDateMore,function(index,val){
           arr.push(val.date);
         });
-        if(arr.indexOf(item.date) < 0 ){
+
+        //点击日期比当前日期小也不能点击
+        var today = new Date().getTime();
+        var ss = new Date(item.date);
+        var clickDate = ss.valueOf(ss);
+
+        if(arr.indexOf(item.date) < 0 && clickDate > today){
           if (item.otherMonth === 'nowMonth' && !item.dayHide) {
             that.getList(that.myDate, item.date);
           }
@@ -264,12 +271,18 @@
       },
       NextMonth: function (date, isChosedDay = true) {
         date = timeUtil.dateFormat(date);
-        this.myDate = timeUtil.getOtherMonth(this.myDate, 'nextMonth');
-        this.$emit('changeMonth', timeUtil.dateFormat(this.myDate));
-        if (isChosedDay) {
-          this.getList(this.myDate, date, isChosedDay);
-        } else {
-          this.getList(this.myDate);
+        //传进来一个月份，我当前点击这个月份进行对比，要是比当前的大，不能点击
+        var clickDay = "";
+        clickDay = date.split("/");
+        clickDay = `${clickDay[0]}/${clickDay[1]}`;
+        if(clickDay < this.endMonth) {
+          this.myDate = timeUtil.getOtherMonth(this.myDate, 'nextMonth');
+          this.$emit('changeMonth', timeUtil.dateFormat(this.myDate));
+          if (isChosedDay) {
+            this.getList(this.myDate, date, isChosedDay);
+          } else {
+            this.getList(this.myDate);
+          }
         }
       },
       forMatArgs: function () {
