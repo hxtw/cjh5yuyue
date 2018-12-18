@@ -16,7 +16,7 @@
       <div class="line"></div>
       <div class="chose-date">
         <div class="date-head">选择日期</div>
-        <Calendar ref="Calendar" :sundayStart="false" :markDateMore="arr"
+        <Calendar ref="Calendar" :sundayStart="false" :markDateMore="arr" :endMonth="endMonth"
                   :markDate="arr2" v-on:choseDay="clickDay" v-on:changeMonth="changeDate"></Calendar>
       </div>
     </section>
@@ -35,6 +35,7 @@
 
 <script>
   import Calendar from './vue-calendar-component/index';
+  import {getTime} from '@/api/index'
   export default {
     name: "selectBranch",
     data(){
@@ -42,39 +43,35 @@
         choseArr:[],
         timestamp:"",
         arr2: [],
-        arr: [
-          {
-            date: '2018/12/20',
-            className: 'mark1'
-          },
-          {
-            date: '2018/12/25',
-            className: 'mark1'
-          },
-          {
-            date: '2019/1/26',
-            className: 'mark1'
-          },
-          {
-            date: '2019/1/1',
-            className: 'mark2'
-          },
-          {
-            date: '2018/12/1',
-            className: 'mark2'
-          },
-          {
-            date: '2018/12/2',
-            className: 'mark2'
-          },
-        ],
+        arr: [],
         showAlert:false,
+        endMonth:'',
       }
     },
     components:{
       Calendar
     },
     methods:{
+      getList(){
+        let mark1 = {},mark2 = {},lastMonth="";
+        let that = this;
+        getTime().then(res=>{
+          console.log(res)
+          let dateList = res.data.jjk_result.dateList;
+          $.each(dateList,function(index,val){
+            if(val.resType == 2){ //已约满
+              mark1={date:val.date,className:'mark1'};
+              that.arr.push(mark1);
+            }else if(val.resType == 3){ //休息日
+              mark2 = {date:val.date,className:'mark2'};
+              that.arr.push(mark2);
+            }
+          });
+          lastMonth = dateList[dateList.length-1].date;
+          lastMonth = lastMonth.split("-");
+          that.endMonth = `${lastMonth[0]}/${lastMonth[1]}`;
+        });
+      },
       clickDay(data) {
         console.log('选中了', data); //选中某天
       },
@@ -110,6 +107,7 @@
     },
     mounted(){
       // this.$ref.Calendar.agoDayHide = new Date().getTime();
+      this.getList();
       this.timestamp=new Date().getTime();
     },
   }

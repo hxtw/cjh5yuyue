@@ -15,7 +15,7 @@ Vue.use(Calendar);
 // Vue.use(axios);
 Vue.prototype.$axios = axios;
 Vue.prototype.qs = Qs;
-axios.defaults.headers.common['Authentication'] = '187CDEC552923321BFC9D442ECAF2740624E8A845ECF67D1DF5CB967E0033AC2';
+// axios.defaults.headers.common['Authentication'] = '187CDEC552923321BFC9D442ECAF2740624E8A845ECF67D1DF5CB967E0033AC2';
 
 
 /* eslint-disable no-new */

@@ -318,6 +318,15 @@
           k.isMark = markDate.indexOf(nowTime) > -1;
           //无法选中某天
           k.dayHide = t < this.agoDayHide || t > this.futureDayHide;
+
+          var today = new Date().getTime();
+          var ss = new Date(k.date);
+          var beforeDate = ss.valueOf(ss);
+
+          if(beforeDate < today){
+            k.dayHide = true;
+          }
+
           if (k.isToday) {
             this.$emit('isToday', nowTime);
           }

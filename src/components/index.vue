@@ -18,6 +18,7 @@
 
 <script>
   import units from '../tool/units'
+  import {loginSubmit,indexSubmit} from '@/api/index'
   export default {
     name: "index",
     data() {
@@ -41,29 +42,20 @@
     },
     methods: {
       getToken(){
-        // this.$axios.post('https://apiserver.jijiankang.cn/api-rest/account/fastlogin',
-        //   this.qs.stringify({
-        //     "phoneNumber":"‭15601118267‬",
-        //     'vcode':'243856',
-        //   }),{
-        //     headers: {
-        //       'Content-Type': 'application/x-www-form-urlencoded'
-        //     }
-        //   }).then(function(res){
-        //   console.log(res.data);
-        // });
-        this.$axios.post(units.host('writeGroup'),
-          this.qs.stringify({
+        this.$axios.post(units.host('writeGroup'),{
             "sglcheckId":"R\\/GzmryKAg0nc52cxFJ4T0iN4iY\\/J+pkpFOAM1aNZHw=",
             'checkCityId':'110100',
             'groupCode':'1803088774',
             'personCode':'1803088774',
-          }),{
-            headers: {
-              // 'Content-Type': 'application/x-www-form-urlencoded',
-              'Authorization':'187CDEC552923321BFC9D442ECAF2740624E8A845ECF67D1DF5CB967E0033AC2'
-            }
           }).then(function(res){
+          console.log(res.data);
+        });
+        this.$axios.get(units.host(''),{params:{
+          "sglcheckId":"R\\/GzmryKAg0nc52cxFJ4T0iN4iY\\/J+pkpFOAM1aNZHw=",
+          'checkCityId':'110100',
+          'groupCode':'1803088774',
+          'personCode':'1803088774',
+        }}).then(function(res){
           console.log(res.data);
         });
       },
@@ -77,20 +69,17 @@
       },
       goNext(){
         let that = this;//
-        this.$axios.get(
-          units.host('getPersonBySglcheckIdName?checkUserName=张炎&sglcheckId=000101018121171903&userId=23368855'),
-          // {headers:{
-          //     'Authorization':'187CDEC552923321BFC9D442ECAF2740624E8A845ECF67D1DF5CB967E0033AC2'}
-          // }
-          )
-        .then(function(res){
-            if(res.data.jjk_resultCode == "0"){
-              that.$router.push('/information');
-            }else{
-              // that.$router.push('/information');
-              that.$toast("登录错误")
-            }
-          });
+        indexSubmit(this.formData).then(res=>{
+          that.$router.push('/information');
+        });
+        //两个接口同时触发
+        // this.$axios.all([loginSubmit(this.formData), indexSubmit()])
+        //   .then(this.$axios.spread(function (acct, perms) {
+        //     // 两个请求现在都执行完成
+        //     console.log(acct)
+        //     console.log(perms)
+        //   }));
+        // that.$router.push('/information');
       }
     },
     created(){
