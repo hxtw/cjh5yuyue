@@ -41,6 +41,7 @@
       }
     },
     methods: {
+      scan(){},
       getToken(){
         this.$axios.post(units.host('writeGroup'),{
             "sglcheckId":"R\\/GzmryKAg0nc52cxFJ4T0iN4iY\\/J+pkpFOAM1aNZHw=",
