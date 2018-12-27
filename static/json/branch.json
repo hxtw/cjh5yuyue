@@ -1,0 +1,138 @@
+{
+  "jjk_resultCode": "0",
+  "jjk_resultMsg": "成功",
+  "jjk_result": [
+    {
+      "checkUnitId": "0001015",
+      "checkUnitAddress": "北京市海淀区上地十街辉煌国际大厦1号院3号楼1-2层（鸿炜亿家酒店门口进入一层慈铭体检前台）",
+      "checkUnitMobile": "010-62981881",
+      "checkUnitName": "北京上地分院"
+    },
+    {
+      "checkUnitId": "0001026",
+      "checkUnitAddress": "丰台区马家堡东路106号银帆地产大厦3A层 （银帆地产大厦4楼402室）",
+      "checkUnitMobile": "010-58030099",
+      "checkUnitName": "北京洋桥门诊部"
+    },
+    {
+      "checkUnitId": "0001007",
+      "checkUnitAddress": "中关村大街甲28号海淀文化艺术大厦B座（东区）6层",
+      "checkUnitMobile": "010-82533936",
+      "checkUnitName": "北京知春路分院"
+    },
+    {
+      "checkUnitId": "0001016",
+      "checkUnitAddress": "望京分院位于朝阳区望京街10号院方恒时代B座一层",
+      "checkUnitMobile": "010-64788828",
+      "checkUnitName": "北京望京门诊部"
+    },
+    {
+      "checkUnitId": "0001103",
+      "checkUnitAddress": "北京市西城区西直门外大街1号西环广场T1写字楼（南座）16层",
+      "checkUnitMobile": "",
+      "checkUnitName": "西直门VIP"
+    },
+    {
+      "checkUnitId": "0001004",
+      "checkUnitAddress": "北京市海淀区板井路69号世纪金源大饭店东二层（西郊汽配城对面）",
+      "checkUnitMobile": "010-88458272",
+      "checkUnitName": "北京世纪城分院"
+    },
+    {
+      "checkUnitId": "0001002",
+      "checkUnitAddress": "北京市朝阳区北土城西路7号（国恒基业大厦二层）",
+      "checkUnitMobile": "010-82275789",
+      "checkUnitName": "北京亚运村分院"
+    },
+    {
+      "checkUnitId": "0001003",
+      "checkUnitAddress": "北京市西城区西直门外大街1号西环广场T1写字楼（南座）15层",
+      "checkUnitMobile": "010-58301213",
+      "checkUnitName": "北京西直门分院"
+    },
+    {
+      "checkUnitId": "0001024",
+      "checkUnitAddress": "北京市东城区东城区安定门东大街28号 雍和大厦B座1-2层",
+      "checkUnitMobile": "010-84195507",
+      "checkUnitName": "北京雍和宫门诊部A区"
+    },
+    {
+      "checkUnitId": "0001014",
+      "checkUnitAddress": "北京市朝阳区建国路99号中服大厦写字楼第2、3层",
+      "checkUnitMobile": "65816513",
+      "checkUnitName": "北京大北窑分院"
+    },
+    {
+      "checkUnitId": "0001025",
+      "checkUnitAddress": "海淀区复兴路21号海育大厦5层",
+      "checkUnitMobile": "010-68511180",
+      "checkUnitName": "北京公主坟门诊部"
+    },
+    {
+      "checkUnitId": "0001006",
+      "checkUnitAddress": "北京市朝阳区亮马桥路39号（第一上海中心B座1-3层）",
+      "checkUnitMobile": "010-84535277",
+      "checkUnitName": "北京亮马桥分院"
+    },
+    {
+      "checkUnitId": "0001124",
+      "checkUnitAddress": "北京市东城区东城区安定门东大街28号 雍和大厦B座2层",
+      "checkUnitMobile": "010-84195507",
+      "checkUnitName": "北京雍和宫门诊部C区"
+    },
+    {
+      "checkUnitId": "0001018",
+      "checkUnitAddress": "北京市海淀区中关村东路101号",
+      "checkUnitMobile": "010-62615558",
+      "checkUnitName": "北京慈铭联想桥门诊部"
+    },
+    {
+      "checkUnitId": "0001027",
+      "checkUnitAddress": "月坛分院位于北京市西城区月坛南街24号西城区工人文化宫",
+      "checkUnitMobile": "68516559",
+      "checkUnitName": "北京慈铭月坛门诊部"
+    },
+    {
+      "checkUnitId": "0001009",
+      "checkUnitAddress": "西城区广安门外大街182号远见国际公寓4-5层（国家话剧院剧场对面）",
+      "checkUnitMobile": "010-68085518",
+      "checkUnitName": "北京广安门分院"
+    },
+    {
+      "checkUnitId": "0001001",
+      "checkUnitAddress": "北京市朝阳区潘家园9号濠景阁大厦1-2层（肿瘤医院北200米路口）",
+      "checkUnitMobile": "010-87701177",
+      "checkUnitName": "北京潘家园分院"
+    },
+    {
+      "checkUnitId": "0001127",
+      "checkUnitAddress": "北京市西城区月坛南街24号西城工人文化宫1、6层",
+      "checkUnitMobile": "",
+      "checkUnitName": "北京慈铭月坛门诊部VIP"
+    },
+    {
+      "checkUnitId": "0001017",
+      "checkUnitAddress": "北京市朝阳区北苑路91号（慈铭大厦)体检区1层",
+      "checkUnitMobile": "010-59658688",
+      "checkUnitName": "北京慈铭奥亚门诊部"
+    },
+    {
+      "checkUnitId": "0001020",
+      "checkUnitAddress": "朝阳区八里庄西里99号住邦2000商务中心2号楼(惠客楼)5层",
+      "checkUnitMobile": "010-85868458",
+      "checkUnitName": "北京慈铭慈云寺门诊部"
+    },
+    {
+      "checkUnitId": "0001117",
+      "checkUnitAddress": "北京市朝阳区北苑路91号（慈铭大厦)体检区2层",
+      "checkUnitMobile": "010-59658688",
+      "checkUnitName": "北京慈铭奥亚二层门诊部"
+    },
+    {
+      "checkUnitId": "0001224",
+      "checkUnitAddress": "北京市东城区东城区安定门东大街28号 雍和大厦B座2层",
+      "checkUnitMobile": "010-84195507",
+      "checkUnitName": "北京雍和宫门诊部B区"
+    }
+  ]
+}

@@ -1,6 +1,6 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-
+import Test from '@/components/test'
 Vue.use(Router);
 
 export default new Router({
@@ -61,5 +61,18 @@ export default new Router({
         require(['../components/appointmentDetails.vue'],resolve)
       }
     },
+    {
+      path: '/test',
+      name: 'test',
+      component: function(resolve){
+        require(['../components/test/test.vue'],resolve)
+      },
+      children:[
+        {path:'/',
+          component: function(resolve){
+            require(['../components/test/test.vue'],resolve)
+          }
+        },]
+    }
   ]
 })

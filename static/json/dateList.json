@@ -1,1 +1,185 @@
-{"jjk_resultCode":"0","jjk_resultMsg":"成功","jjk_result":{"dateList":[{"date":"2018-12-19","resType":"3"},{"date":"2018-12-20","resType":"2"},{"date":"2018-12-21","resType":"2"},{"date":"2018-12-22","resType":"2"},{"date":"2018-12-23","resType":"2"},{"date":"2018-12-24","resType":"1"},{"date":"2018-12-25","resType":"1"},{"date":"2018-12-26","resType":"3"},{"date":"2018-12-27","resType":"1"},{"date":"2018-12-28","resType":"1"},{"date":"2018-12-29","resType":"1"},{"date":"2018-12-30","resType":"1"},{"date":"2018-12-31","resType":"1"},{"date":"2019-01-01","resType":"3"},{"date":"2019-01-02","resType":"3"},{"date":"2019-01-03","resType":"1"},{"date":"2019-01-04","resType":"1"},{"date":"2019-01-05","resType":"1"},{"date":"2019-01-06","resType":"1"},{"date":"2019-01-07","resType":"1"},{"date":"2019-01-08","resType":"1"},{"date":"2019-01-09","resType":"3"},{"date":"2019-01-10","resType":"1"},{"date":"2019-01-11","resType":"1"},{"date":"2019-01-12","resType":"1"},{"date":"2019-01-13","resType":"1"},{"date":"2019-01-14","resType":"1"},{"date":"2019-01-15","resType":"1"},{"date":"2019-01-16","resType":"3"},{"date":"2019-01-17","resType":"1"},{"date":"2019-01-18","resType":"1"},{"date":"2019-01-19","resType":"1"},{"date":"2019-01-20","resType":"1"},{"date":"2019-01-21","resType":"1"},{"date":"2019-01-22","resType":"1"},{"date":"2019-01-23","resType":"3"},{"date":"2019-01-24","resType":"1"},{"date":"2019-01-25","resType":"1"},{"date":"2019-01-26","resType":"1"},{"date":"2019-01-27","resType":"1"},{"date":"2019-01-28","resType":"1"},{"date":"2019-01-29","resType":"1"},{"date":"2019-01-30","resType":"3"},{"date":"2019-01-31","resType":"1"}],"limitItem":""}}
+{
+  "jjk_resultCode": "0",
+  "jjk_resultMsg": "成功",
+  "jjk_result": {
+    "dateList": [
+      {
+        "date": "2018-12-19",
+        "resType": "3"
+      },
+      {
+        "date": "2018-12-20",
+        "resType": "2"
+      },
+      {
+        "date": "2018-12-21",
+        "resType": "2"
+      },
+      {
+        "date": "2018-12-22",
+        "resType": "2"
+      },
+      {
+        "date": "2018-12-23",
+        "resType": "2"
+      },
+      {
+        "date": "2018-12-24",
+        "resType": "1"
+      },
+      {
+        "date": "2018-12-25",
+        "resType": "1"
+      },
+      {
+        "date": "2018-12-26",
+        "resType": "3"
+      },
+      {
+        "date": "2018-12-27",
+        "resType": "1"
+      },
+      {
+        "date": "2018-12-28",
+        "resType": "1"
+      },
+      {
+        "date": "2018-12-29",
+        "resType": "1"
+      },
+      {
+        "date": "2018-12-30",
+        "resType": "1"
+      },
+      {
+        "date": "2018-12-31",
+        "resType": "1"
+      },
+      {
+        "date": "2019-01-01",
+        "resType": "3"
+      },
+      {
+        "date": "2019-01-02",
+        "resType": "3"
+      },
+      {
+        "date": "2019-01-03",
+        "resType": "1"
+      },
+      {
+        "date": "2019-01-04",
+        "resType": "1"
+      },
+      {
+        "date": "2019-01-05",
+        "resType": "1"
+      },
+      {
+        "date": "2019-01-06",
+        "resType": "1"
+      },
+      {
+        "date": "2019-01-07",
+        "resType": "1"
+      },
+      {
+        "date": "2019-01-08",
+        "resType": "1"
+      },
+      {
+        "date": "2019-01-09",
+        "resType": "3"
+      },
+      {
+        "date": "2019-01-10",
+        "resType": "1"
+      },
+      {
+        "date": "2019-01-11",
+        "resType": "1"
+      },
+      {
+        "date": "2019-01-12",
+        "resType": "1"
+      },
+      {
+        "date": "2019-01-13",
+        "resType": "1"
+      },
+      {
+        "date": "2019-01-14",
+        "resType": "1"
+      },
+      {
+        "date": "2019-01-15",
+        "resType": "1"
+      },
+      {
+        "date": "2019-01-16",
+        "resType": "3"
+      },
+      {
+        "date": "2019-01-17",
+        "resType": "1"
+      },
+      {
+        "date": "2019-01-18",
+        "resType": "1"
+      },
+      {
+        "date": "2019-01-19",
+        "resType": "1"
+      },
+      {
+        "date": "2019-01-20",
+        "resType": "1"
+      },
+      {
+        "date": "2019-01-21",
+        "resType": "1"
+      },
+      {
+        "date": "2019-01-22",
+        "resType": "1"
+      },
+      {
+        "date": "2019-01-23",
+        "resType": "3"
+      },
+      {
+        "date": "2019-01-24",
+        "resType": "1"
+      },
+      {
+        "date": "2019-01-25",
+        "resType": "1"
+      },
+      {
+        "date": "2019-01-26",
+        "resType": "1"
+      },
+      {
+        "date": "2019-01-27",
+        "resType": "1"
+      },
+      {
+        "date": "2019-01-28",
+        "resType": "1"
+      },
+      {
+        "date": "2019-01-29",
+        "resType": "1"
+      },
+      {
+        "date": "2019-01-30",
+        "resType": "3"
+      },
+      {
+        "date": "2019-01-31",
+        "resType": "1"
+      }
+    ],
+    "limitItem": ""
+  }
+}
