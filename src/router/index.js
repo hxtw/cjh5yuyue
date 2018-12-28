@@ -69,10 +69,15 @@ export default new Router({
       },
       children:[
         {path:'/',
-          component: function(resolve){
+        component: function(resolve){
             require(['../components/test/test.vue'],resolve)
           }
-        },]
+        },
+        {path:'/test1',
+          component: function(resolve){
+            require(['../components/test/test1.vue'],resolve)
+          }
+        }]
     }
   ]
 })
